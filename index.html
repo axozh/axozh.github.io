@@ -5,38 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>axolols</title>
 <style>
-  body {
-    background-color: #222;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .container {
-    text-align: center;
-  }
-
-  .button {
-    background-color: purple;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .button img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
-</style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    .container {
+      text-align: center;
+    }
+  
+    .button {
+      background-color: purple;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 20px; /* Add border radius for rounded shape */
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); /* Add box shadow for depth */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+    }
+  
+    .button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  
+    .button:hover {
+      background-color: #8e44ad; /* Change background color on hover */
+      transform: scale(1.05); /* Add slight scale effect on hover */
+    }
+  </style>
 <script>
   function redirectToGitHub() {
     window.location.href = "https://github.com/axozh";
