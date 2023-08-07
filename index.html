@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>axo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>axolols</title>
+<style>
+  body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .button {
+    background-color: purple;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+</style>
+<script>
+  function redirectToGitHub() {
+    window.location.href = "https://github.com/axozh";
+  }
+</script>
 </head>
 <body>
-    <link rel="icon" href="images/favi.png" type="image/x-icon">
+  <div class="container">
+    <h1>Welcome</h1>
+    <button class="button" onclick="redirectToGitHub()">
+      <img src="images/github.png" alt="Github Icon">
+      Visit My GitHub
+    </button>
+  </div>
 </body>
 </html>
