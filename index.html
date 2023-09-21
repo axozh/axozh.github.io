@@ -1,365 +1,57 @@
-
-<html lang="en"><head><meta charset="UTF-8"/>
-    <script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=function(){var e=0,i=0,t=[],n=!1,o=[],r=[],s=!0,a=function(e,i,n,o,r,s,a){var l=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,d=this;this.name=e,this.funcName=i,this.parameters=null===n?null:p(n)?n:[n],this.isBlock=o,this.blockedBy=r,this.deleteWhenComplete=s,this.isError=!1,this.isComplete=!1,this.isInitialized=!1,this.proceedIfError=a,this.fWindow=l,this.isTimeDelay=!1,this.process=function(){f("... func = "+e),d.isInitialized=!0,d.isComplete=!0,f("... func.apply: "+e);var i=d.funcName.split("."),n=null,o=this.fWindow||window;i.length>3||(n=3===i.length?o[i[0]][i[1]][i[2]]:2===i.length?o[i[0]][i[1]]:o[d.funcName]),null!=n&&n.apply(null,this.parameters),!0===d.deleteWhenComplete&&delete t[e],!0===d.isBlock&&(f("----- F'D: "+d.name),u())}},l=function(e,i,t,n,o,r,s){var a=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,l=this;this.name=e,this.path=i,this.async=o,this.defer=r,this.isBlock=t,this.blockedBy=n,this.isInitialized=!1,this.isError=!1,this.isComplete=!1,this.proceedIfError=s,this.fWindow=a,this.isTimeDelay=!1,this.isPath=function(e){return"/"===e[0]&&"/"!==e[1]},this.getSrc=function(e){return void 0!==window.__ezScriptHost&&this.isPath(e)&&"banger.js"!==this.name?window.__ezScriptHost+e:e},this.process=function(){l.isInitialized=!0,f("... file = "+e);var i=this.fWindow?this.fWindow.document:document,t=i.createElement("script");t.src=this.getSrc(this.path),!0===o?t.async=!0:!0===r&&(t.defer=!0),t.onerror=function(){var e={url:window.location.href,name:l.name,path:l.path,user_agent:window.navigator.userAgent};"undefined"!=typeof _ezaq&&(e.pageview_id=_ezaq.page_view_id);var i=encodeURIComponent(JSON.stringify(e)),t=new XMLHttpRequest;t.open("GET","//g.ezoic.net/ezqlog?d="+i,!0),t.send(),f("----- ERR'D: "+l.name),l.isError=!0,!0===l.isBlock&&u()},t.onreadystatechange=t.onload=function(){var e=t.readyState;f("----- F'D: "+l.name),e&&!/loaded|complete/.test(e)||(l.isComplete=!0,!0===l.isBlock&&u())},i.getElementsByTagName("head")[0].appendChild(t)}},d=function(e,i){this.name=e,this.path="",this.async=!1,this.defer=!1,this.isBlock=!1,this.blockedBy=[],this.isInitialized=!0,this.isError=!1,this.isComplete=i,this.proceedIfError=!1,this.isTimeDelay=!1,this.process=function(){}};function c(e){!0!==h(e)&&0!=s&&e.process()}function h(e){if(!0===e.isTimeDelay&&!1===n)return f(e.name+" blocked = TIME DELAY!"),!0;if(p(e.blockedBy))for(var i=0;i<e.blockedBy.length;i++){var o=e.blockedBy[i];if(!1===t.hasOwnProperty(o))return f(e.name+" blocked = "+o),!0;if(!0===e.proceedIfError&&!0===t[o].isError)return!1;if(!1===t[o].isComplete)return f(e.name+" blocked = "+o),!0}return!1}function f(e){var i=window.location.href,t=new RegExp("[?&]ezq=([^&#]*)","i").exec(i);"1"===(t?t[1]:null)&&console.debug(e)}function u(){++e>200||(f("let's go"),m(o),m(r))}function m(e){for(var i in e)if(!1!==e.hasOwnProperty(i)){var t=e[i];!0===t.isComplete||h(t)||!0===t.isInitialized||!0===t.isError?!0===t.isError?f(t.name+": error"):!0===t.isComplete?f(t.name+": complete already"):!0===t.isInitialized&&f(t.name+": initialized already"):t.process()}}function p(e){return"[object Array]"==Object.prototype.toString.call(e)}return window.addEventListener("load",(function(){setTimeout((function(){n=!0,f("TDELAY -----"),u()}),5e3)}),!1),{addFile:function(e,i,n,s,a,d,h,f,u){var m=new l(e,i,n,s,a,d,h,u);!0===f?o[e]=m:r[e]=m,t[e]=m,c(m)},addDelayFile:function(e,i){var n=new l(e,i,!1,[],!1,!1,!0);n.isTimeDelay=!0,f(e+" ...  FILE! TDELAY"),r[e]=n,t[e]=n,c(n)},addFunc:function(e,n,s,l,d,h,f,u,m,p){!0===h&&(e=e+"_"+i++);var w=new a(e,n,s,l,d,f,u,p);!0===m?o[e]=w:r[e]=w,t[e]=w,c(w)},addDelayFunc:function(e,i,n){var o=new a(e,i,n,!1,[],!0,!0);o.isTimeDelay=!0,f(e+" ...  FUNCTION! TDELAY"),r[e]=o,t[e]=o,c(o)},items:t,processAll:u,setallowLoad:function(e){s=e},markLoaded:function(e){if(e&&0!==e.length){if(e in t){var i=t[e];!0===i.isComplete?f(i.name+" "+e+": error loaded duplicate"):(i.isComplete=!0,i.isInitialized=!0)}else t[e]=new d(e,!0);f("markLoaded dummyfile: "+t[e].name)}},logWhatsBlocked:function(){for(var e in t)!1!==t.hasOwnProperty(e)&&h(t[e])}}}();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-0&cb=2', true, [], true, false, true, false);__ez.queue.addFile('/parsonsmaize/abilene.js', '/parsonsmaize/abilene.js?gcb=195-0&cb=28', true, [], true, false, true, false);__ez.queue.addFile('/parsonsmaize/mulvane.js', '/parsonsmaize/mulvane.js?gcb=195-0&cb=5', true, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/parsonsmaize/olathe.js', '/parsonsmaize/olathe.js?gcb=195-0&cb=19', false, ['/parsonsmaize/abilene.js','/parsonsmaize/mulvane.js'], true, false, true, false);__ez.queue.addFile('/porpoiseant/et.js', '/porpoiseant/et.js?gcb=195-0&cb=2', false, [], true, false, true, false);!function(){var e;__ez.vep=(e=[],{Add:function(i,t){__ez.dot.isDefined(i)&&__ez.dot.isValid(t)&&e.push({type:"video",video_impression_id:i,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(t)})},Fire:function(){if(void 0===document.visibilityState||"prerender"!==document.visibilityState){if(__ez.dot.isDefined(e)&&e.length>0)for(;e.length>0;){var i=5;i>e.length&&(i=e.length);var t=e.splice(0,i),o=__ez.dot.getURL("/detroitchicago/grapefruit.gif")+"?orig="+(!0===__ez.template.isOrig?1:0)+"&v="+btoa(JSON.stringify(t));__ez.dot.Fire(o)}e=[]}}})}();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>!function(){function e(i){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(i)}__ez.pel=function(){var i=[];function t(t,o,d,_,n,r,a,s){if(__ez.dot.isDefined(t)&&0!=__ez.dot.isAnyDefined(t.getSlotElementId,t.ElementId)){void 0===s&&(s=!1);var p=parseInt(__ez.dot.getTargeting(t,"ap")),f=__ez.dot.getSlotIID(t),u=__ez.dot.getAdUnit(t,s),z=parseInt(__ez.dot.getTargeting(t,"compid")),g=0,c=0,l=function(i){if("undefined"==typeof _ezim_d)return!1;var t=__ez.dot.getAdUnitPath(i).split("/").pop();if("object"===("undefined"==typeof _ezim_d?"undefined":e(_ezim_d))&&_ezim_d.hasOwnProperty(t))return _ezim_d[t];for(var o in _ezim_d)if(o.split("/").pop()===t)return _ezim_d[o];return!1}(t);"object"==e(l)&&(void 0!==l.creative_id&&(c=l.creative_id),void 0!==l.line_item_id&&(g=l.line_item_id)),__ez.dot.isDefined(f,u)&&__ez.dot.isValid(o)&&("0"===f&&!0!==s||""===u||i.push({type:"impression",impression_id:f,domain_id:__ez.dot.getDID(),unit:u,t_epoch:__ez.dot.getEpoch(0),revenue:d,est_revenue:_,ad_position:p,ad_size:"",bid_floor_filled:n,bid_floor_prev:r,stat_source_id:a,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:z,line_item_id:g,creative_id:c,data:__ez.dot.dataToStr(o),is_orig:s||__ez.template.isOrig}))}}function o(){void 0!==document.visibilityState&&"prerender"===document.visibilityState||(__ez.dot.isDefined(i)&&i.length>0&&[i.filter((function(e){return e.is_orig})),i.filter((function(e){return!e.is_orig}))].forEach((function(e){for(;e.length>0;){var i=e[0].is_orig||!1,t=5;t>e.length&&(t=e.length);var o=e.splice(0,t),d=__ez.dot.getURL("/porpoiseant/army.gif")+"?orig="+(!0===i?1:0)+"&sts="+btoa(JSON.stringify(o));(void 0!==window.isAmp&&isAmp||void 0!==window.ezWp&&ezWp)&&void 0!==window._ezaq&&_ezaq.hasOwnProperty("domain_id")&&(d+="&visit_uuid="+_ezaq.visit_uuid),__ez.dot.Fire(d)}})),i=[])}return{Add:t,AddAndFire:function(e,i){t(e,i,0,0,0,0,0),o()},AddAndFireOrig:function(e,i){t(e,i,0,0,0,0,0,!0),o()},AddById:function(e,t,o,d){var _=e.split("/");if(__ez.dot.isDefined(e)&&3===_.length&&__ez.dot.isValid(t)){var n=_[0],r={type:"impression",impression_id:_[2],domain_id:__ez.dot.getDID(),unit:n,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(t),is_orig:o||__ez.template.isOrig};void 0!==d&&(r.revenue=d),i.push(r)}},Fire:o,GetPixels:function(){return i}}}()}();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-0&cb=6', false, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/detroitchicago/vista.js', '/detroitchicago/vista.js?gcb=195-0&cb=5', false, ['/parsonsmaize/abilene.js'], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-0&cb=5', false, ['/parsonsmaize/abilene.js'], true, false, true, false);</script>
-    <script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-0&cb=7', false, [], true, false, true, false);</script><base href="https://elite2site.com/page2.html"/><link rel="website icon" type="png" href="images/logo.png" <html=""/>
-    
-        <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2088040631576699" crossorigin="anonymous"></script>
-        
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Elite2Site</title>
-        <link rel="stylesheet" href="main.css"/>
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css"/>
-    <link rel='canonical' href='https://elite2site.com/page2.html' />
-    <script type="text/javascript">var ezouid = "1";</script><script type='text/javascript'>
-    var ezoTemplate = 'old_site_noads';
-    if(typeof ezouid == 'undefined')
-    {
-        var ezouid = 'none';
-    }
-    var ezoFormfactor = '1';
-    </script><script data-ezscrex="false" type='text/javascript'>
-    var soc_app_id = '0';
-    var did = 484027;
-    var ezdomain = 'elite2site.com';
-    var ezoicSearchable = 1;
-    </script>
-    <script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ab_test_id":"mod61-c","ad_cache_level":1,"ad_lazyload_version":0,"ad_load_version":0,"city":"Virginia Beach","country":"US","days_since_last_visit":-1,"domain_id":484027,"engaged_time_visit":2,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"has_bad_image":0,"has_bad_words":0,"is_embed":false,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"1695329593126","last_pageview_id":"38ec31c4-cf59-43c5-71f1-37e756dd51f9","lt_cache_level":0,"metro_code":544,"page_ad_positions":"","page_view_count":2,"page_view_id":"743f7c35-4e30-4933-4022-23199061941b","position_selection_id":0,"postal_code":"23454","pv_event_count":0,"response_size_orig":11030,"response_time_orig":5,"serverid":"i-0ec25a45f6357e56e","state":"VA","t_epoch":1695329591,"template_id":120,"time_on_site_visit":5,"url":"https://elite2site.com/page2.html","word_count":22,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
-    <script src="/detroitchicago/ezd.js?gcb=195-0&cb=4" defer async></script>
-    <script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
-    function create_ezolpl() {
-        var d = new Date();
-        d.setTime(d.getTime() + (365*24*60*60*1000));
-        var expires = "expires="+d.toUTCString();
-        __ez.ck.setByCat("ezux_lpl_484027=" + new Date().getTime() + "|" + _ezaq.page_view_id + "|" + _ezaq.is_return_visitor + "; " + expires, 3);
-    }
-    function attach_ezolpl() {
-        if (document.readyState === "complete") {
-            create_ezolpl();
-            return;
-        }
-        window.addEventListener("load", create_ezolpl);
-    }
-    
-    __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", null, false, ['/detroitchicago/boise.js'], true, false, false, false);
-    </script></head>
-    <body>
-        <nav>
-            <img src="images/logo.png" alt="logo"/>
-            <h1>Elite2Site</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">Proxy</a></li>
-                <li><a href="page2.html">Games</a></li>
-                <li><a href="page3.html">More</a></li>
-              <li><a href="page3.html">...</a></li>
-            </ul>
-        </nav>
-        <div class="content">
-    
-          
-      
-        <title>Toggle Dark Mode Button</title>
-        <style>
-          /* Default styles */
-          body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-          }
-    
-          /* Button styles */
-          .dark-mode-button {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            padding: 10px;
-            background-color: #007bff;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <style>
+        body {
+            background-color: #333;
             color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #444;
+            color: #fff;
+            text-decoration: none;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            z-index: 999;
-          }
-    
-          /* Button styles on scroll */
-          .dark-mode-button.scroll {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-          }
-    
-          /* Dark mode styles */
-          body.dark-mode {
-            background-color: #111;
-            color: #fff;
-          }
-        </style>
-        <script>
-          // JavaScript to toggle the "scroll" class on the button
-          window.addEventListener("scroll", function() {
-            var button = document.querySelector(".dark-mode-button");
-            var scrollPosition = window.scrollY;
-            if (scrollPosition > 100) {
-              button.classList.add("scroll");
-            } else {
-              button.classList.remove("scroll");
-            }
-          });
-    
-          // JavaScript to toggle dark mode
-          function toggleDarkMode() {
-            var body = document.querySelector("body");
-            body.classList.toggle("dark-mode");
-          }
-        </script>
-      
-      
-        <!-- Toggle Dark Mode Button -->
-        <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-         
-    
-    
-    <style>
-      .play-button {
-        background-color: blue; /* Change this to the desired color */
-      }
-    </style>
-    
-    <style>
-      .featured {
-        position: relative;
-        overflow: hidden;
-      }
-    
-      .grid-container {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-      }
-    
-      .grid-item {
-        flex: 0 0 auto;
-        width: 300px;
-        height: 200px;
-        margin-right: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        opacity: 0;
-        animation: fadeIn 1s ease-in;
-      }
-    
-      .grid-item img {
-        max-width: 100%;
-        height: auto;
-      }
-    
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
+            font-size: 18px;
         }
-        to {
-          opacity: 1;
+        
+        .button:hover {
+            background-color: #666;
         }
-      }
     </style>
-    
-    <div class="featured">
-      <h1 style="color: white; background-color: rgba(0, 0, 0, 0.2); text-align: center; border: none;">Games:</h1>
-    
-    
-    <div class="content">
-      <hr/>
-      <div class="search">
-        <input type="text" placeholder="Search..." onfocus="animateSearchBar(true)" onblur="animateSearchBar(false)"/>
-        <button><i class="fas fa-search"></i></button>
-      </div>
+</head>
+<body>
+    <div class="container">
+        <h1>Unblocked Games</h1>
+        <p>Made by ???</p>
+        <div class="buttons">
+            <a class="button" href="#">Button 1</a>
+            <a class="button" href="#">Button 2</a>
+            <a class="button" href="#">Button 3</a>
+            <a class="button" href="#">Button 4</a>
+            <a class="button" href="#">Button 5</a>
+        </div>
     </div>
-    <script src="search.js"></script>
-    
-    
-    
-    
-    
-      <div id="games">
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"/></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"/></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"/></a>
-            <a href="games/minecraft-18"><img src="images/mc.png" alt="minecraft"/></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"/></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"/></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"/></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"/></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"/></a>
-          <a href="games/subway-surfers/"><img src="images/splash.jpg" alt="subway-surfers"/></a>
-       <a href="games/1v1lol/"><img src="images/1v1.png" alt="1v1lol"/></a>
-        <a href="games/mario/"><img src="images/mario-super-mario-bros.jpg" alt="mario"/></a>
-        <a href="games/rooftop-snipers/"><img src="images/rooftop-snipers.png" alt="rooftop-snipers"/></a>
-           <a href="games/happywheels/"><img src="images/happywheels.png" alt="happywheels"/></a> 
-          <a href="games/fridaynightfunkin/"><img src="images/friday.png" alt="fridaynightfunkin"/></a>
-          <a href="games/pixel-gun-survival/"><img src="images/pixel-gun-survival.png" alt="pixel-gun-survival"/></a>
-          <a href="games/Run%203.html"><img src="images/run%203.jpg" alt="run3"/></a>
-          <a href="games/google-snake/"><img src="images/snake.png" alt="google-snake"/>
-          </a>
-          <a href="games/DogeMiner/"><img src="images/favicon.ico" alt="DogeMiner"/>
-              </a><a href="games/shellshockers/"><img src="images/shellshockers.png" alt="shellshockers"/>
-            </a><a href="games/bitlife/"><img src="images/bitlife.png" alt="bitlife"/>
-                </a><a href="games/basketball-stars/"><img src="images/basketball-starsi.png" alt="basketball-stars"/>
-                    </a><a href="games/basketbros-io/"><img src="images/basketbros.jpg" alt="basketbros-io"/>
-                        </a><a href="games/cookie-clicker/"><img src="images/cookieclicker.png" alt="cookieclicker"/>
-                            </a><a href="games/ducklife1/"><img src="images/ducklife.png" alt="ducklife1"/>
-                                </a><a href="games/ducklife2/"><img src="images/ducklife2.png" alt="ducklife2"/>
-                             </a><a href="games/ducklife3/"><img src="images/ducklife3.png" alt="ducklife3"/>
-                             </a><a href="games/ducklife4/"><img src="images/ducklife4.jpg" alt="ducklife4"/> 
-                       </a><a href="games/drift-hunters/"><img src="images/drift-hunters.png" alt="drift-hunters"/>
-                       </a><a href="games/just-fall/"><img src="images/justfall.png" alt="justfall"/>
-                        </a><a href="games/eggycar/"><img src="images/eggy-car.png" alt="eggycar"/>
-                    </a><a href="games/tunnel-rush/"><img src="images/tunnel.jpg" alt="tunnel-rush"/>
-                    </a><a href="games/paperio2/"><img src="images/paperio.png" alt="paperio2"/> 
-                        </a><a href="games/getaway-shootout/"><img src="images/getaway.jpg" alt="getaway-shootout"/> 
-                    </a><a href="games/smashkarts/"><img src="images/smashkarts.png" alt="smashkarts"/>
-                  </a><a href="games/awesometanks2"><img src="images/awesometanks2.jpg" alt="awesometanks2"/> 
-                      </a><a href="games/MonkeyMart/"><img src="images/Monkeymart%5D.avif" alt="MonkeyMart"/> 
-                    </a><a href="games/learntofly2/"><img src="images/learn-to-fly-2.jpg" alt="learntofly2"/>
-                        </a><a href="games/crossyroad/"><img src="images/crossyroad.png" alt="crossyroad"/> 
-                 </a><a href="games/2048/"><img src="images/2048.png" alt="2048"/>
-                     </a><a href="games/papasburgeria/"><img src="images/papas.jpg" alt="papasburgeria"/>
-                    </a><a href="games/flappybird/"><img src="images/Flappy_Bird_icon.png" alt="flappybird"/>
-                        </a><a href="games/backrooms/"><img src="images/backrooms.jpg" alt="backrooms"/>
-                            </a><a href="games/drift-boss/"><img src="images/driftbross.png" alt="driftboss"/>
-                    </a><a href="games/Dogeminer2/"><img src="images/dodgeminer2.jpg" alt="dogeminer2"/>
-                    </a><a href="games/cars-simulator/"><img src="images/car.png" alt="cars-simulator"/>
-                    
-                             
-        </a></div><a href="games/cars-simulator/">
-    
-    
-    <script src="script.js"></script>
-                                
-    
-    
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Dark Blue Scrolling Background with Transparent Circles</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                overflow: auto; /* Enable scrolling */
-                background-color: #121c35; /* Dark blue background */
-                font-family: 'Montserrat', sans-serif;
-            }
-    
-            .circle-container {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                z-index: -1; /* Set lower z-index to make circles appear behind content */
-            }
-    
-            .circle {
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: transparent; /* Transparent circles */
-                opacity: 0.8;
-                animation: pulsate 4s infinite alternate, moveAround 10s infinite linear;
-                pointer-events: none; /* Prevent circles from capturing mouse events */
-            }
-    
-            @keyframes pulsate {
-                0% {
-                    transform: scale(1);
-                }
-                100% {
-                    transform: scale(1.2);
-                }
-            }
-    
-            @keyframes moveAround {
-                0%, 100% {
-                    transform: translate(0, 0);
-                }
-                25% {
-                    transform: translate(50%, 50%);
-                }
-                50% {
-                    transform: translate(100%, 0);
-                }
-                75% {
-                    transform: translate(50%, -50%);
-                }
-            }
-    
-            .content {
-                padding: 20px;
-                color: #fff;
-                line-height: 1.6;
-            }
-    
-            h1 {
-                font-size: 40px;
-                font-weight: bold;
-            }
-    
-            p {
-                font-size: 18px;
-            }
-        </style>
-    
-    
-        <div class="circle-container">
-            <div class="circle"></div>
-            <!-- Add more circles here if desired -->
-        </div>
-    
-        <div class="content">
-    
-        </div>
-    
-        <script>
-            const numCircles = 100;
-    
-            function createCircles() {
-                for (let i = 0; i < numCircles; i++) {
-                    const circle = document.createElement('div');
-                    circle.classList.add('circle');
-                    circle.style.width = circle.style.height = randomInRange(20, 80) + 'px';
-                    circle.style.left = randomInRange(0, window.innerWidth) + 'px';
-                    circle.style.top = randomInRange(0, window.innerHeight) + 'px';
-                    circle.style.animationDelay = randomInRange(0, 4) + 's';
-                    document.querySelector('.circle-container').appendChild(circle);
-                }
-            }
-    
-            function randomInRange(min, max) {
-                return Math.random() * (max - min) + min;
-            }
-    
-            createCircles();
-        </script>
-    
-    
-    </a></div></div><script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=0&cb=3', false, ['/parsonsmaize/mulvane.js'], true, false, true, false);</script>
-    <script>var _audins_dom="elite2site_com",_audins_did=484027;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezodn.com/detroitchicago/audins.js?cb=195-0");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.elite2site_com,DomainId.484027" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
-    <script>__ez.queue.addFile('/beardeddragon/drake.js', '/beardeddragon/drake.js?gcb=0&cb=4', false, [], true, false, true, false);</script>
-    <script type="text/javascript" style='display:none;'>var __ez_dims = (function() {
-            var setCookie = function( name, content, expiry ) {
-                return document.cookie = name+'='+content+((expiry)?';expires='+(new Date(Math.floor(new Date().getTime()+expiry*1000)).toUTCString()):'')+';path=/';
-            };
-            var ffid = 1;
-            var oh = window.screen.height;
-            var ow = window.screen.width;
-            var h = ffid === 1 ? oh : (oh > ow) ? oh : ow;
-            var w = ffid === 1 ? ow : (oh > ow) ? ow : oh;
-            var uh = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-            var uw = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-            setCookie('ezds', encodeURIComponent('ffid='+ffid+',w='+w+',h='+h), (31536e3*7));
-            setCookie('ezohw', encodeURIComponent('w='+uw+',h='+uh), (31536e3*7));
-        })();</script>
-    <script type='text/javascript' style='display:none;' async>__ez.queue.addFile('/parsonsmaize/chanute.js', '/parsonsmaize/chanute.js?a=a&cb=4&dcb=195-0&shcb=34', true, ['/parsonsmaize/mulvane.js'], true, false, false, false);</script>
-    <script type='text/javascript' style='display:none;' async>__ez.queue.addFile('/porpoiseant/jellyfish.js', '/porpoiseant/jellyfish.js?a=a&cb=10&dcb=195-0&shcb=34', false, [], true, false, false, false);</script></body></html>
+</body>
+</html>
