@@ -12,21 +12,22 @@
             background-attachment: fixed;
             color: #fff;
             font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin to ensure full-page background */
         }
-        
+
         .container {
             text-align: center;
             margin-top: 100px;
         }
-        
+
         h1 {
             font-size: 36px;
         }
-        
+
         .buttons {
             margin-top: 20px;
         }
-        
+
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -38,25 +39,51 @@
             border-radius: 5px;
             font-size: 18px;
         }
-        
+
         .button:hover {
             background-color: #666;
+        }
+
+        /* Loading screen styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loading-gif {
+            width: 100px;
+            height: 100px;
+        }
+
+        #content {
+            display: none; /* Initially hide the content */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Unblocked Games</h1>
-        <p>XZSite On Top</p>
-        <div class="buttons">
-            <a class="button" href="dividing-game.html">Subway Surfers</a>
-            <a class="button" href="sliding-decimals.html">Slope</a>
-            <a class="button" href="slipping-addition.html">Snake</a>
-            <a class="button" href="stickman.html">StickMan</a>
-            <a class="button" href="#">Flappy Bird</a>
+    <div id="loading-screen">
+        <img src="images/loading.gif" alt="Loading..." id="loading-gif">
+    </div>
+    <div id="content">
+        <div class="container">
+            <h1>Unblocked Games</h1>
+            <p>XZSite On Top</p>
+            <div class="buttons">
+                <a class="button" href="dividing-game.html">Subway Surfers</a>
+                <a class="button" href="sliding-decimals.html">Slope</a>
+                <a class="button" href="slipping-addition.html">Snake</a>
+                <a class="button" href="stickman.html">StickMan</a>
+                <a class="button" href="#">Flappy Bird</a>
+            </div>
         </div>
-    </div>\
-
+    </div>
 
     <script>
         // Wait for the page to load
