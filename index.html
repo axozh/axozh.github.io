@@ -1,3 +1,4 @@
+User
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +20,7 @@
             text-align: center;
             margin-top: 100px;
         }
-        .fade-in {
-        opacity: 1;
-        transition: opacity 1s ease-in-out;
-    }
+
         h1 {
             font-size: 36px;
         }
@@ -91,20 +89,12 @@
     <script>
         // Wait for the page to load
         window.onload = function () {
-            // Simulate a delay of 1.5 seconds (1500 milliseconds)
+            // Simulate a delay of 5 seconds
             setTimeout(function () {
-                // Hide the loading screen
-                document.getElementById('loading-screen').style.opacity = '0';
-    
-                // Use requestAnimationFrame for smoother animation
-                requestAnimationFrame(function () {
-                    // Get the content element
-                    var content = document.getElementById('content');
-    
-                    // Add the 'fade-in' class to fade it in
-                    content.classList.add('fade-in');
-                });
-            }, 1500); // 1500 milliseconds (1.5 seconds)
+                // Hide the loading screen and display the content
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 10); // 5000 milliseconds (5 seconds)
         };
     </script>
 </body>
