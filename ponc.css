@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.container {
+  padding: 30px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+label[for="oncFile"] {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f0f0f0; /* Add this line to reapply the background color */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input[type="file"],
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  animation: fade-up 0.3s forwards;
+}
+
+input[type="submit"]:not(:hover) {
+  animation: fade-down 0.3s forwards;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
